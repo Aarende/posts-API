@@ -485,7 +485,6 @@ src/
 ├── services/        # Бизнес-логика
 ├── repositories/    # Работа с БД
 ├── models/          # DTO и сущности
-├── auth/            # JWT и хэширование
 ├── errors/          # Обработка ошибок
 ├── state/           # Состояние приложения
 ├── constants.rs     # Константы
