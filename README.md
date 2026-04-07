@@ -18,13 +18,13 @@ RESTful API сервер на Rust с JWT авторизацией для упр
 - Rust (nightly или stable)
 - PostgreSQL
 
-### Настройка
+## Настройка
 
-1. Клонируйте репозиторий:
+### Клонируйте репозиторий:
 
 ``` bash
 
-   git clone https://github.com/Aarende/posts-API
+git clone https://github.com/Aarende/posts-API
 
 ```
 
@@ -46,7 +46,7 @@ JWT_REFRESH_SECRET=your-very-secret-refresh-key-minimum-32-bytes
 
 ```bash
 
-   diesel migration run
+diesel migration run
 
 ```
 
@@ -54,7 +54,7 @@ JWT_REFRESH_SECRET=your-very-secret-refresh-key-minimum-32-bytes
 
 ```bash
 
-   cargo run --release
+cargo run --release
 
 ```
 
@@ -67,7 +67,9 @@ API использует JWT токены двух типов:
 
 Для доступа к защищённым эндпоинтам добавьте заголовок:
 
-   Authorization: Bearer <access_token>
+```text
+Authorization: Bearer <access_token>
+```
 
 ## Эндпоинты
 
@@ -95,11 +97,11 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "nickname": "john_doe",
-       "password": "secure_password",
-       "about": "Описание пользователя (опционально)"
-   }
+{
+   "nickname": "john_doe",
+   "password": "secure_password",
+    "about": "Описание пользователя (опционально)"
+}
 
 ```
 
@@ -107,12 +109,12 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
-       "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
-       "user_id": 1,
-       "nickname": "john_doe"
-   }
+{
+   "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+   "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+   "user_id": 1,
+   "nickname": "john_doe"
+}
 
 ```
 
@@ -126,10 +128,10 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "nickname": "john_doe",
-       "password": "secure_password"
-   }
+{
+   "nickname": "john_doe",
+   "password": "secure_password"
+}
 
 ```
 
@@ -137,12 +139,12 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
-       "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
-       "user_id": 1,
-       "nickname": "john_doe"
-   }
+{
+   "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+   "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+   "user_id": 1,
+   "nickname": "john_doe"
+}
 
 ```
 
@@ -158,13 +160,13 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "id": 1,
-       "nickname": "john_doe",
-       "about": "Описание пользователя",
-       "created_at": "2024-01-01T00:00:00",
-       "last_updated": "2024-01-01T00:00:00"
-   }
+{
+   "id": 1,
+   "nickname": "john_doe",
+   "about": "Описание пользователя",
+   "created_at": "2024-01-01T00:00:00",
+   "last_updated": "2024-01-01T00:00:00"
+}
 
 ```
 
@@ -180,13 +182,13 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "id": 1,
-       "nickname": "john_doe",
-       "about": "Описание пользователя",
-       "created_at": "2024-01-01T00:00:00",
-       "last_updated": "2024-01-01T00:00:00"
-   }
+{
+   "id": 1,
+   "nickname": "john_doe",
+   "about": "Описание пользователя",
+   "created_at": "2024-01-01T00:00:00",
+   "last_updated": "2024-01-01T00:00:00"
+}
 
 ```
 
@@ -207,22 +209,22 @@ API использует JWT токены двух типов:
 
 ```json
 
-   [
-       {
-           "id": 1,
-           "nickname": "alice",
-           "about": null,
-           "created_at": "2024-01-01T00:00:00",
-           "last_updated": "2024-01-01T00:00:00"
-       },
-       {
-           "id": 2,
-           "nickname": "bob",
-           "about": "Hello",
-           "created_at": "2024-01-02T00:00:00",
-           "last_updated": "2024-01-02T00:00:00"
-       }
-   ]
+[
+   {
+      "id": 1,
+      "nickname": "alice",
+      "about": null,
+      "created_at": "2024-01-01T00:00:00",
+      "last_updated": "2024-01-01T00:00:00"
+   },
+   {
+      "id": 2,
+      "nickname": "bob",
+      "about": "Hello",
+      "created_at": "2024-01-02T00:00:00",
+      "last_updated": "2024-01-02T00:00:00"
+   }
+]
 
 ```
 
@@ -238,15 +240,15 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "id": 1,
-       "title": "Заголовок поста",
-       "description": "Краткое описание",
-       "content": "Полное содержание поста...",
-       "author": "john_doe",
-       "created_at": "2024-01-01T00:00:00",
-       "last_updated": "2024-01-01T00:00:00"
-   }
+{
+   "id": 1,
+   "title": "Заголовок поста",
+   "description": "Краткое описание",
+   "content": "Полное содержание поста...",
+   "author": "john_doe",
+   "created_at": "2024-01-01T00:00:00",
+   "last_updated": "2024-01-01T00:00:00"
+}
 
 ```
 
@@ -270,17 +272,17 @@ API использует JWT токены двух типов:
 
 ```json
 
-   [
-       {
-           "id": 1,
-           "title": "Первый пост",
-           "description": "Описание",
-           "content": "Содержание...",
-           "author": "john_doe",
-           "created_at": "2024-01-01T00:00:00",
-           "last_updated": "2024-01-01T00:00:00"
-       }
-   ]
+[
+   {
+      "id": 1,
+      "title": "Первый пост",
+      "description": "Описание",
+      "content": "Содержание...",
+      "author": "john_doe",
+      "created_at": "2024-01-01T00:00:00",
+      "last_updated": "2024-01-01T00:00:00"
+   }
+]
 
 ```
 
@@ -302,17 +304,17 @@ API использует JWT токены двух типов:
 
 ```json
 
-   [
-       {
-           "id": 1,
-           "title": "Новый пост",
-           "description": null,
-           "content": "Содержание...",
-           "author": "john_doe",
-           "created_at": "2024-01-01T00:00:00",
-           "last_updated": "2024-01-01T00:00:00"
-       }
-   ]
+[
+   {
+      "id": 1,
+      "title": "Новый пост",
+      "description": null,
+      "content": "Содержание...",
+      "author": "john_doe",
+      "created_at": "2024-01-01T00:00:00",
+      "last_updated": "2024-01-01T00:00:00"
+   }
+]
 
 ```
 
@@ -330,10 +332,10 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "nickname": "new_nickname",
-       "about": "Новое описание"
-   }
+{
+   "nickname": "new_nickname",
+   "about": "Новое описание"
+}
 
 ```
 
@@ -343,13 +345,13 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "id": 1,
-       "nickname": "new_nickname",
-       "about": "Новое описание",
-       "created_at": "2024-01-01T00:00:00",
-       "last_updated": "2024-01-02T00:00:00"
-   }
+{
+   "id": 1,
+   "nickname": "new_nickname",
+   "about": "Новое описание",
+   "created_at": "2024-01-01T00:00:00",
+   "last_updated": "2024-01-02T00:00:00"
+}
 
 ```
 
@@ -365,11 +367,11 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "title": "Заголовок (3-50 символов)",
-       "description": "Описание (3-200 символов, опционально)",
-       "content": "Содержание (минимум 20 символов)"
-   }
+{
+   "title": "Заголовок (3-50 символов)",
+   "description": "Описание (3-200 символов, опционально)",
+   "content": "Содержание (минимум 20 символов)"
+}
 
 ```
 
@@ -377,15 +379,15 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "id": 1,
-       "title": "Заголовок",
-       "description": "Описание",
-       "content": "Содержание...",
-       "author": "john_doe",
-       "created_at": "2024-01-01T00:00:00",
-       "last_updated": "2024-01-01T00:00:00"
-   }
+{
+   "id": 1,
+   "title": "Заголовок",
+   "description": "Описание",
+   "content": "Содержание...",
+   "author": "john_doe",
+   "created_at": "2024-01-01T00:00:00",
+   "last_updated": "2024-01-01T00:00:00"
+}
 
 ```
 
@@ -401,12 +403,12 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "id": 1,
-       "title": "Новый заголовок (опционально)",
-       "description": "Новое описание (опционально)",
-       "content": "Новое содержание (опционально)"
-   }
+{
+   "id": 1,
+   "title": "Новый заголовок (опционально)",
+   "description": "Новое описание (опционально)",
+   "content": "Новое содержание (опционально)"
+}
 
 ```
 
@@ -414,15 +416,15 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "id": 1,
-       "title": "Новый заголовок",
-       "description": "Новое описание",
-       "content": "Новое содержание...",
-       "author": "john_doe",
-       "created_at": "2024-01-01T00:00:00",
-       "last_updated": "2024-01-02T00:00:00"
-   }
+{
+   "id": 1,
+   "title": "Новый заголовок",
+   "description": "Новое описание",
+   "content": "Новое содержание...",
+   "author": "john_doe",
+   "created_at": "2024-01-01T00:00:00",
+   "last_updated": "2024-01-02T00:00:00"
+}
 
 ```
 
@@ -448,12 +450,12 @@ API использует JWT токены двух типов:
 
 ```json
 
-   {
-       "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
-       "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
-       "user_id": 1,
-       "nickname": "john_doe"
-   }
+{
+   "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+   "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+   "user_id": 1,
+   "nickname": "john_doe"
+}
 
 ```
 
@@ -498,6 +500,6 @@ src/
 
 ```bash
 
-   cargo run
+cargo run
 
 ```
